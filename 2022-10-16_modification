@@ -1,0 +1,44 @@
+grep -r -i "status:open" .
+./app/Core/User/UserSession.php:            return session_get('user') ? session_get('user')['filter'] ?: 'status:open' : 'status:open';
+./app/Template/project_header/search_original.php:                <?= $this->render('app/filters_helper', array('reset' => 'status:open', 'project' => $project)) ?>
+./app/Template/app/filters_helper.php:        <li><a href="#" class="filter-helper" data-filter="status:open"><?= t('Open tasks') ?></a></li>
+./app/Template/app/filters_helper.php:        <li><a href="#" class="filter-helper" data-filter="status:open assignee:me"><?= t('My tasks') ?></a></li>
+./app/Template/app/filters_helper.php:        <li><a href="#" class="filter-helper" data-filter="status:open assignee:nobody"><?= t('Not assigned') ?></a></li>
+./app/Template/app/filters_helper.php:        <li><a href="#" class="filter-helper" data-filter="status:open assignee:anybody"><?= t('Assigned') ?></a></li>
+./app/Template/app/filters_helper.php:        <li><a href="#" class="filter-helper" data-filter="status:open category:none"><?= t('No category') ?></a></li>
+./app/Template/app/filters_helper_original.php:        <li><a href="#" class="filter-helper" data-filter="status:open assignee:me"><?= t('My tasks') ?></a></li>
+./app/Template/app/filters_helper_original.php:        <li><a href="#" class="filter-helper" data-filter="status:open assignee:me due:tomorrow"><?= t('My tasks due tomorrow') ?></a></li>
+./app/Template/app/filters_helper_original.php:        <li><a href="#" class="filter-helper" data-filter="status:open due:today"><?= t('Tasks due today') ?></a></li>
+./app/Template/app/filters_helper_original.php:        <li><a href="#" class="filter-helper" data-filter="status:open due:tomorrow"><?= t('Tasks due tomorrow') ?></a></li>
+./app/Template/app/filters_helper_original.php:        <li><a href="#" class="filter-helper" data-filter="status:open due:yesterday"><?= t('Tasks due yesterday') ?></a></li>
+./app/Template/app/filters_helper_original.php:        <li><a href="#" class="filter-helper" data-filter="status:open"><?= t('Open tasks') ?></a></li>
+./app/Template/app/filters_helper_original.php:        <li><a href="#" class="filter-helper" data-filter="status:open assignee:nobody"><?= t('Not assigned') ?></a></li>
+./app/Template/app/filters_helper_original.php:        <li><a href="#" class="filter-helper" data-filter="status:open assignee:anybody"><?= t('Assigned') ?></a></li>
+./app/Template/app/filters_helper_original.php:        <li><a href="#" class="filter-helper" data-filter="status:open category:none"><?= t('No category') ?></a></li>
+./app/Template/search/activity.php:            <li><?= t('Search by task status: ') ?><strong>status:open</strong></li>
+./app/Template/activity/filter_dropdown.php:        <li><a href="#" class="filter-helper" data-filter="status:open"><?= t('Open tasks') ?></a></li>
+filters_helper_original.php
+filters_helper.php
+forbidden.php
+notfound.php
+dropdown.php
+header.php
+search_original.php
+search.php
+views.php
+diff ./app/Template/app/filters_helper_original.php ./app/Template/app/filters_helper.php 
+6,11d5
+<         <li><a href="#" class="filter-helper" data-filter="status:open assignee:me"><?= t('My tasks') ?></a></li>
+<         <li><a href="#" class="filter-helper" data-filter="status:open assignee:me due:tomorrow"><?= t('My tasks due tomorrow') ?></a></li>
+<         <li><a href="#" class="filter-helper" data-filter="status:open due:today"><?= t('Tasks due today') ?></a></li>
+<         <li><a href="#" class="filter-helper" data-filter="status:open due:tomorrow"><?= t('Tasks due tomorrow') ?></a></li>
+<         <li><a href="#" class="filter-helper" data-filter="status:open due:yesterday"><?= t('Tasks due yesterday') ?></a></li>
+<         <li><a href="#" class="filter-helper" data-filter="status:closed"><?= t('Closed tasks') ?></a></li>
+12a7,8
+>         <li><a href="#" class="filter-helper" data-filter="status:closed"><?= t('Closed tasks') ?></a></li>
+>         <li><a href="#" class="filter-helper" data-filter="status:open assignee:me"><?= t('My tasks') ?></a></li>
+diff ./app/Template/project_header/search_original.php ./app/Template/project_header/search.php 
+11c11
+<                 <?= $this->render('app/filters_helper', array('reset' => 'status:open', 'project' => $project)) ?>
+---
+>                 <?= $this->render('app/filters_helper', array('reset' => '', 'project' => $project)) ?>
